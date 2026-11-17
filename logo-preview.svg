@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%" id="ai-logo-svg">
+  <defs>
+    <!-- Top Arc Path for Khmer Text (radius ~ 205) -->
+    <path id="pathKhmerText" d="M 132.1,182.4 A 205,205 0 0,1 467.9,182.4" fill="none" />
+    
+    <!-- Bottom Arc Path for English Text (radius ~ 205) left to right -->
+    <path id="pathEngText" d="M 132.1,417.6 A 205,205 0 0,0 467.9,417.6" fill="none" />
+    
+    <!-- Left beans guide arc -->
+    <path id="leftArc" d="M 120,200 A 205,205 0 0,0 120,400" fill="none" />
+
+    <!-- Drop shadow for realism -->
+    <filter id="subtleShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <style>
+    .gold-color { color: #b88a4b; }
+    .brown-color { color: #64442e; }
+    .st-gold { stroke: #b88a4b; fill: none; }
+    .bg-paper { fill: #ffffff; }
+    .txt-khmer {
+      font-family: 'Kantumruy Pro', 'Battambang', 'Khmer OS Muol Light', 'Segoe UI', sans-serif;
+      font-size: 27px;
+      font-weight: 700;
+      fill: #b88a4b;
+      letter-spacing: 0.5px;
+    }
+    .txt-eng {
+      font-family: 'Times New Roman', 'Baskerville', 'Georgia', serif;
+      font-size: 26px;
+      font-weight: 700;
+      fill: #b88a4b;
+      letter-spacing: 4px;
+    }
+    .txt-num {
+      font-family: 'Times New Roman', 'Georgia', serif;
+      font-size: 21px;
+      font-weight: 700;
+      fill: #b88a4b;
+      letter-spacing: 1px;
+    }
+    .guide-line { stroke: #3b82f6; stroke-dasharray: 4,4; stroke-width: 1; opacity: 0; transition: opacity 0.3s; }
+    .show-guides .guide-line { opacity: 0.7; }
+    
+    /* Illustrator Outline Mode (Ctrl+Y) Simulation */
+    .outline-mode * {
+      fill: none !important;
+      stroke: #1e293b !important;
+      stroke-width: 1.2px !important;
+    }
+    .outline-mode text {
+      fill: #1e293b !important;
+      stroke: none !important;
+    }
+  </style>
+
+  <!-- Background Base Sheet -->
+  <rect width="600" height="600" fill="#ffffff" rx="16" filter="url(#subtleShadow)"/>
+
+  <!-- Printable Area / Safe Margin Boundary (Guide, togglable) -->
+  <rect x="25" y="25" width="550" height="550" fill="none" stroke="#e2e8f0" stroke-width="1" class="guide-line"/>
+  <circle cx="300" cy="300" r="280" class="guide-line"/>
+  <line x1="300" y1="20" x2="300" y2="580" class="guide-line"/>
+  <line x1="20" y1="300" x2="580" y2="300" class="guide-line"/>
+
+  <!-- ==================== MAIN EMBLEM GRAPHICS ==================== -->
+  <g id="logo-emblem-group" transform="translate(0, 0)">
+    
+    <!-- 1. OUTER CIRCLE (Diameter ~ 480px, stroke 3px) -->
+    <circle id="outer-circle" cx="300" cy="300" r="240" stroke="#b88a4b" stroke-width="3.5" fill="none"/>
+    
+    <!-- 2. INNER CIRCLE (Diameter ~ 340px, stroke 2px) -->
+    <circle id="inner-circle" cx="300" cy="300" r="170" stroke="#b88a4b" stroke-width="2" fill="none"/>
+
+    <!-- 3. TOP KHMER TEXT: សាលាបង្រៀនភេសជ្ជៈ -->
+    <text class="txt-khmer">
+      <textPath href="#pathKhmerText" startOffset="50%" text-anchor="middle">
+        សាលាបង្រៀនភេសជ្ជៈ
+      </textPath>
+    </text>
+
+    <!-- 4. BOTTOM ENGLISH TEXT: BAVERAGE SCHOOL -->
+    <text class="txt-eng">
+      <textPath href="#pathEngText" startOffset="50%" text-anchor="middle">
+        BAVERAGE SCHOOL
+      </textPath>
+    </text>
+
+    <!-- 5. SIDE COFFEE BEANS - LEFT SIDE (3 vertical beans following circle) -->
+    <g id="left-coffee-beans">
+      <!-- Bean Top-Left (angled ~ -25 deg) -->
+      <g transform="translate(108, 245) rotate(-18)">
+        <ellipse cx="0" cy="0" rx="9.5" ry="15.5" fill="#b88a4b" />
+        <path d="M 0 -13 Q -3.5 0 0 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Bean Middle-Left (vertical) -->
+      <g transform="translate(98, 300) rotate(0)">
+        <ellipse cx="0" cy="0" rx="10" ry="16" fill="#64442e" />
+        <path d="M 0 -14 Q 3.5 0 0 14" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Bean Bottom-Left (angled ~ +25 deg) -->
+      <g transform="translate(108, 355) rotate(18)">
+        <ellipse cx="0" cy="0" rx="9.5" ry="15.5" fill="#b88a4b" />
+        <path d="M 0 -13 Q -3.5 0 0 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 6. SIDE COFFEE BEANS - RIGHT SIDE (3 vertical beans following circle) -->
+    <g id="right-coffee-beans">
+      <!-- Bean Top-Right (angled ~ +25 deg) -->
+      <g transform="translate(492, 245) rotate(18)">
+        <ellipse cx="0" cy="0" rx="9.5" ry="15.5" fill="#b88a4b" />
+        <path d="M 0 -13 Q 3.5 0 0 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Bean Middle-Right (vertical) -->
+      <g transform="translate(502, 300) rotate(0)">
+        <ellipse cx="0" cy="0" rx="10" ry="16" fill="#64442e" />
+        <path d="M 0 -14 Q -3.5 0 0 14" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Bean Bottom-Right (angled ~ -25 deg) -->
+      <g transform="translate(492, 355) rotate(-18)">
+        <ellipse cx="0" cy="0" rx="9.5" ry="15.5" fill="#b88a4b" />
+        <path d="M 0 -13 Q 3.5 0 0 13" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 7. CENTER GRAPHICS: LTSP & 2026 -->
+    <text x="210" y="255" class="txt-num" text-anchor="middle">LTSP</text>
+    <text x="390" y="255" class="txt-num" text-anchor="middle">2026</text>
+
+    <!-- 8. STEAM RISING FROM CUP -->
+    <g id="cup-steam" stroke="#b88a4b" stroke-linecap="round" fill="none">
+      <!-- Left main curl -->
+      <path d="M 272 238 C 248 215, 290 190, 260 162 C 248 152, 230 152, 218 160" stroke-width="2.6"/>
+      <!-- Right gentle curl -->
+      <path d="M 292 238 C 275 212, 320 192, 298 162 C 290 152, 278 150, 270 156" stroke-width="2"/>
+    </g>
+
+    <!-- 9. FLOATING ACCENTS (Heart + 2 Coffee Beans near steam) -->
+    <g id="floating-elements">
+      <!-- Floating Heart -->
+      <path d="M 335,160 C 335,152 328,147 322,152 C 316,147 309,152 309,160 C 309,169 322,176 322,176 C 322,176 335,169 335,160 Z" fill="#b88a4b"/>
+      
+      <!-- Floating Bean 1 (Tilted 35 deg) -->
+      <g transform="translate(352, 172) rotate(35)">
+        <ellipse cx="0" cy="0" rx="7.5" ry="12" fill="#64442e"/>
+        <path d="M 0 -10 Q 2.5 0 0 10" stroke="#ffffff" stroke-width="1.6" fill="none"/>
+      </g>
+      
+      <!-- Floating Bean 2 (Tilted 65 deg) -->
+      <g transform="translate(376, 185) rotate(65)">
+        <ellipse cx="0" cy="0" rx="6.5" ry="10.5" fill="#b88a4b"/>
+        <path d="M 0 -9 Q -2 0 0 9" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+      </g>
+    </g>
+
+    <!-- 10. SAUCER PLATES UNDER CUP -->
+    <g id="saucer-group">
+      <!-- Lower outer saucer ellipse -->
+      <ellipse cx="300" cy="385" rx="108" ry="18" stroke="#b88a4b" stroke-width="3" fill="none"/>
+      <!-- Middle inner saucer ellipse line -->
+      <ellipse cx="300" cy="392" rx="82" ry="13" stroke="#b88a4b" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- 11. CUP HANDLE -->
+    <g id="cup-handle">
+      <!-- Outer handle curve -->
+      <path d="M 352 280 C 405 280, 420 345, 345 358" stroke="#b88a4b" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+      <!-- Inner cutout highlight -->
+      <path d="M 350 288 C 390 288, 402 336, 348 348" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- 12. COFFEE CUP MAIN BODY -->
+    <g id="cup-main">
+      <!-- Cup silhouette body -->
+      <path d="M 230 262 
+               C 230 330, 260 375, 300 375 
+               C 340 375, 370 330, 370 262 
+               Z" 
+            fill="#64442e" />
+
+      <!-- Cup Rim / Top opening (Ellipse) -->
+      <ellipse cx="300" cy="262" rx="70" ry="15" fill="#b88a4b" stroke="#64442e" stroke-width="2"/>
+      <!-- Inside coffee liquid -->
+      <ellipse cx="300" cy="262" rx="64" ry="12" fill="#382114" />
+      <ellipse cx="300" cy="262" rx="55" ry="8" fill="#64442e" />
+
+      <!-- Cup Decorative Cutout Slices (Negative space curved white stripes on right side) -->
+      <g stroke="#ffffff" stroke-linecap="round" fill="none">
+        <path d="M 322 284 C 344 292, 354 306, 350 322" stroke-width="5.5"/>
+        <path d="M 314 302 C 332 310, 342 324, 338 338" stroke-width="5"/>
+        <path d="M 302 322 C 318 330, 326 342, 322 354" stroke-width="4.5"/>
+        <path d="M 288 340 C 300 348, 306 358, 302 368" stroke-width="3.8"/>
+      </g>
+
+      <!-- Rim front golden highlight -->
+      <path d="M 233 263 C 255 273, 345 273, 367 263" stroke="#b88a4b" stroke-width="3" fill="none"/>
+    </g>
+
+  </g>
+</svg>
